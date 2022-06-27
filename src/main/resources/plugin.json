@@ -1,0 +1,12 @@
+{
+  "id": "plugin-maker",
+  "weight": 0,
+  "minversion": 202200225609,
+  "javaplugin": "net.goldorion.pluginmaker.PluginMaker",
+  "info": {
+    "name": "Plugin Maker",
+    "description": "A new generator for MCreator plugins",
+    "author": "Goldorion",
+    "version": "0.1"
+  }
+}

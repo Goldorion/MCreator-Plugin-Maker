@@ -1,0 +1,21 @@
+templates:
+  - template: blockly_category.json.ftl
+    name: "@SRCROOT/aitasks/$@registryname.json"
+    condition: "editor %= aitasks"
+    deleteWhenConditionFalse: true
+  - template: blockly_category.json.ftl
+    name: "@SRCROOT/cmdargs/$@registryname.json"
+    condition: "editor %= cmdargs"
+    deleteWhenConditionFalse: true
+  - template: blockly_category.json.ftl
+    name: "@SRCROOT/jsontriggers/$@registryname.json"
+    condition: "editor %= jsontriggers"
+    deleteWhenConditionFalse: true
+  - template: blockly_category.json.ftl
+    name: "@SRCROOT/procedures/$@registryname.json"
+    condition: "editor %= procedures"
+    deleteWhenConditionFalse: true
+
+localizationkeys:
+  - key: blockly.category.@registryname
+    mapto: name

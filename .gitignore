@@ -1,0 +1,12 @@
+#FILES FOR INTELLIJ IDEA
+#=======================
+**/.idea/
+.idea/*
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+build/
+
+gradle.properties
+.idea/vcs.xml

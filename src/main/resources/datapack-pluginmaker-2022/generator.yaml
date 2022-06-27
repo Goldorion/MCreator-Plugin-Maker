@@ -1,0 +1,20 @@
+name: MCreator plugins - @buildfileversion
+status: dev
+buildfileversion: 2022.2.25609
+subverison: 0.1
+
+gradle:
+  export_file: "build/export/export.zip"
+
+source_root: "@WORKSPACEROOT/src/main/"
+res_root: "@SRCROOT/"
+
+base_templates:
+  - template: pluginbase/plugin.json.ftl
+    name: "@SRCROOT/plugin.json"
+    canLock: true
+
+language_file:
+  format: keyvalue
+  root_folder: "@RESROOT/lang/"
+  langfile_name: "texts_@langname.properties"

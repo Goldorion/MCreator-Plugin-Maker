@@ -1,0 +1,11 @@
+task build(type: Zip) {
+    from 'src/main'
+    fileTree("src/main/lang/").forEach(file -> {
+        String old = file.getPath()
+        String what = old.substring(old.lastIndexOf("_") + 1, old.lastIndexOf("_") + 3)
+        ant.move(file: file, toFile: old.replace(what + ".properties", what.toUpperCase() + ".properties"))
+    })
+    ant.move(file:'src/main/lang/texts_en_US.properties', tofile:'src/main/lang/texts.properties') // We need to remove _en_us as MCreator does not detect it.
+    archiveName = 'export.zip'
+    destinationDir = file('build/export/')
+}
