@@ -3,11 +3,14 @@ package net.goldorion.pluginmaker.ui.modgui;
 import net.goldorion.pluginmaker.elements.types.BlocklyCategory;
 import net.mcreator.ui.MCreator;
 import net.mcreator.ui.component.JColor;
+import net.mcreator.ui.component.util.PanelUtils;
 import net.mcreator.ui.help.HelpUtils;
 import net.mcreator.ui.init.L10N;
 import net.mcreator.ui.modgui.ModElementGUI;
 import net.mcreator.ui.validation.AggregatedValidationResult;
 import net.mcreator.ui.validation.component.VTextField;
+import net.mcreator.ui.validation.validators.TextFieldValidator;
+import net.mcreator.util.StringUtils;
 import net.mcreator.workspace.elements.ModElement;
 
 import javax.annotation.Nonnull;
@@ -33,10 +36,9 @@ public class BlocklyCategoryGUI extends ModElementGUI<BlocklyCategory> {
         JPanel page1 = new JPanel(new GridLayout(3, 2, 10, 10));
         page1.setOpaque(false);
 
-
-        page1.add(HelpUtils.wrapWithHelpButton(this.withEntry("common/gui_name"), L10N.label("elementgui.common.name_in_gui")));
+        page1.add(HelpUtils.wrapWithHelpButton(this.withEntry("common/gui_name"), L10N.label("elementgui.common.name")));
         net.mcreator.ui.component.util.ComponentUtils.deriveFont(this.name, 16.0F);
-        this.name.setValidator(new net.mcreator.ui.validation.validators.TextFieldValidator(this.name, L10N.t("elementgui.item.error_item_needs_name")));
+        this.name.setValidator(new TextFieldValidator(this.name, L10N.t("elementgui.blockly_category.error_category_needs_name")));
         this.name.enableRealtimeValidation();
         page1.add(name);
 
@@ -46,15 +48,15 @@ public class BlocklyCategoryGUI extends ModElementGUI<BlocklyCategory> {
         page1.add(HelpUtils.wrapWithHelpButton(this.withEntry("blockly_category/hex_color"), L10N.label("elementgui.blockly_category.hex_color")));
         page1.add(hexColor);
 
-        addPage(net.mcreator.ui.component.util.PanelUtils.totalCenterInPanel(page1));
+        addPage(PanelUtils.totalCenterInPanel(page1));
 
         if (!this.isEditingMode())
-            this.name.setText(net.mcreator.util.StringUtils.machineToReadableName(this.modElement.getName()));
+            this.name.setText(StringUtils.machineToReadableName(this.modElement.getName()));
     }
 
     @Override
     protected AggregatedValidationResult validatePage(int i) {
-        return new AggregatedValidationResult.PASS();
+        return new AggregatedValidationResult(name);
     }
 
     @Override

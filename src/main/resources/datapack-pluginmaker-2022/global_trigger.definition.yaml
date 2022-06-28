@@ -1,0 +1,7 @@
+templates:
+  - template: global_trigger.json.ftl
+    name: "@SRCROOT/triggers/@registryname.json"
+
+localizationkeys:
+  - key: trigger.@registryname
+    mapto: name
