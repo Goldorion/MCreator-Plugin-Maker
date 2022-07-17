@@ -1,0 +1,1 @@
+If the event can be canceled (mainly used by Forge events), check this parameter to allow the cancel procedure block.

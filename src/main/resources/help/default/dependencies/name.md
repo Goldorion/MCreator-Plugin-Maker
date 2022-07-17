@@ -1,0 +1,1 @@
+This is the displayed name of the dependency. MCreator also uses dependency's names to determine if a procedure requires dependencies that are not provided by the trigger.

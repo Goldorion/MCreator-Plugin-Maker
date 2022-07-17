@@ -1,7 +1,6 @@
 package net.goldorion.pluginmaker.ui.mcreator.dependencies;
 
 import net.mcreator.blockly.data.Dependency;
-import net.mcreator.ui.MCreator;
 import net.mcreator.ui.component.util.PanelUtils;
 import net.mcreator.ui.help.HelpUtils;
 import net.mcreator.ui.help.IHelpContext;
@@ -19,7 +18,7 @@ public class JDependencyListEntry extends JPanel {
     private final VTextField type = new VTextField(20);
     private final VTextField name = new VTextField(20);
 
-    public JDependencyListEntry(MCreator mcreator, IHelpContext gui, JPanel parent, List<JDependencyListEntry> entryList) {
+    public JDependencyListEntry(IHelpContext gui, JPanel parent, List<JDependencyListEntry> entryList) {
         super(new FlowLayout(FlowLayout.LEFT));
 
         final JComponent container = PanelUtils.expandHorizontally(this);
@@ -27,11 +26,11 @@ public class JDependencyListEntry extends JPanel {
         parent.add(container);
         entryList.add(this);
 
-        add(HelpUtils.wrapWithHelpButton(gui.withEntry("global_trigger/dependency_type"),
+        add(HelpUtils.wrapWithHelpButton(gui.withEntry("dependencies/type"),
                 L10N.label("dialog.dependency_list.type")));
         add(type);
 
-        add(HelpUtils.wrapWithHelpButton(gui.withEntry("global_trigger/name"),
+        add(HelpUtils.wrapWithHelpButton(gui.withEntry("dependencies/name"),
                 L10N.label("dialog.dependency_list.name")));
         add(name);
         name.setValidator(new TextFieldValidator(name, L10N.t("dialog.dependency_list.error_needs_name")));

@@ -1,0 +1,1 @@
+If the global triggers requires an API to work, you need to specify its ID here.

@@ -35,7 +35,7 @@ public class JDependencyEntriesList extends JEntriesList {
         entries.setLayout(new BoxLayout(entries, BoxLayout.PAGE_AXIS));
         entries.setOpaque(false);
 
-        add.addActionListener(e -> registerEntryUI(new JDependencyListEntry(mcreator, gui, entries, entryList)));
+        add.addActionListener(e -> registerEntryUI(new JDependencyListEntry(gui, entries, entryList)));
 
         add("Center", new JScrollPane(PanelUtils.pullElementUp(entries)));
 
@@ -59,7 +59,7 @@ public class JDependencyEntriesList extends JEntriesList {
 
     public void setDependencies(List<Dependency> pool) {
         pool.forEach(e -> {
-            JDependencyListEntry entry = new JDependencyListEntry(mcreator, gui, entries, entryList);
+            JDependencyListEntry entry = new JDependencyListEntry(gui, entries, entryList);
             registerEntryUI(entry);
             entry.setDependency(e);
         });

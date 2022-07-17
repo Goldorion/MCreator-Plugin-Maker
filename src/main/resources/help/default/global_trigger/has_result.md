@@ -1,0 +1,1 @@
+Checking this case will allow users to use the "Set result" procedure block.

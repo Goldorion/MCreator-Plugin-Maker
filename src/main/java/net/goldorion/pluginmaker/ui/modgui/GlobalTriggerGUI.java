@@ -45,14 +45,14 @@ public class GlobalTriggerGUI extends ModElementGUI<GlobalTrigger> {
         this.name.enableRealtimeValidation();
         properties.add(name);
 
-        properties.add(HelpUtils.wrapWithHelpButton(this.withEntry("global_trigger/requiredAPIs"), L10N.label("elementgui.global_trigger.required_apis")));
+        properties.add(HelpUtils.wrapWithHelpButton(this.withEntry("global_trigger/required_apis"), L10N.label("elementgui.global_trigger.required_apis")));
         properties.add(requiredAPIs);
 
         properties.add(HelpUtils.wrapWithHelpButton(this.withEntry("global_trigger/cancelable"), L10N.label("elementgui.global_trigger.cancelable")));
         properties.add(cancelable);
         cancelable.setOpaque(false);
 
-        properties.add(HelpUtils.wrapWithHelpButton(this.withEntry("global_trigger/hasResult"), L10N.label("elementgui.global_trigger.has_result")));
+        properties.add(HelpUtils.wrapWithHelpButton(this.withEntry("global_trigger/has_result"), L10N.label("elementgui.global_trigger.has_result")));
         properties.add(hasResult);
         hasResult.setOpaque(false);
 
