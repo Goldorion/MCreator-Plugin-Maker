@@ -2,6 +2,23 @@ templates:
   - template: global_trigger.json.ftl
     name: "@SRCROOT/triggers/@registryname.json"
 
+    # Code templates for different generators
+  - template: code.ftl
+    name: "@SRCROOT/forge-1.16.5/triggers/@registryname.java.ftl"
+    condition: ${data.hasGenerator('forge-1.16.5')}
+    deleteWhenConditionFalse: true
+    variables: "generator=forge-1.16.5"
+  - template: code.ftl
+    name: "@SRCROOT/forge-1.18.2/triggers/@registryname.java.ftl"
+    condition: ${data.hasGenerator('forge-1.18.2')}
+    deleteWhenConditionFalse: true
+    variables: "generator=forge-1.18.2"
+  - template: code.ftl
+    name: "@SRCROOT/fabric-1.17.1/triggers/@registryname.java.ftl"
+    condition: ${data.hasGenerator('fabric-1.17.1')}
+    deleteWhenConditionFalse: true
+    variables: "generator=fabric-1.17.1"
+
 localizationkeys:
   - key: trigger.@registryname
     mapto: name

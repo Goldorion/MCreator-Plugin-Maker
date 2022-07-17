@@ -1,12 +1,12 @@
 package net.goldorion.pluginmaker.elements.types;
 
+import net.goldorion.pluginmaker.elements.parts.CodePluginElement;
 import net.mcreator.blockly.data.Dependency;
-import net.mcreator.element.GeneratableElement;
 import net.mcreator.workspace.elements.ModElement;
 
 import java.util.List;
 
-public class GlobalTrigger extends GeneratableElement {
+public class GlobalTrigger extends CodePluginElement {
 
     public String name;
     public List<String> requiredAPIs;

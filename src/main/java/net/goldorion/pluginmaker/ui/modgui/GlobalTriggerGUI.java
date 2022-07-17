@@ -1,6 +1,7 @@
 package net.goldorion.pluginmaker.ui.modgui;
 
 import net.goldorion.pluginmaker.elements.types.GlobalTrigger;
+import net.goldorion.pluginmaker.ui.mcreator.codetemplates.JCodeTemplatesList;
 import net.goldorion.pluginmaker.ui.mcreator.dependencies.JDependencyEntriesList;
 import net.mcreator.ui.MCreator;
 import net.mcreator.ui.component.util.PanelUtils;
@@ -26,6 +27,7 @@ public class GlobalTriggerGUI extends ModElementGUI<GlobalTrigger> {
     private final JCheckBox hasResult = L10N.checkbox("elementgui.common.enable");
     private final JComboBox<String> side = new JComboBox<>(new String[] {"both", "client", "server"});
     private JDependencyEntriesList dependencies;
+    private JCodeTemplatesList codeTemplates;
 
     public GlobalTriggerGUI(MCreator mcreator, @Nonnull ModElement modElement, boolean editingMode) {
         super(mcreator, modElement, editingMode);
@@ -59,7 +61,10 @@ public class GlobalTriggerGUI extends ModElementGUI<GlobalTrigger> {
 
         dependencies = new JDependencyEntriesList(mcreator, this);
 
-        addPage((PanelUtils.northAndCenterElement(PanelUtils.totalCenterInPanel(properties), dependencies)));
+        codeTemplates = new JCodeTemplatesList(mcreator, this);
+
+        addPage(L10N.t("elementgui.common.properties_general"), (PanelUtils.northAndCenterElement(PanelUtils.totalCenterInPanel(properties), dependencies)));
+        addPage(L10N.t("elementgui.common.code_templates"), codeTemplates);
     }
 
     @Override
@@ -75,6 +80,7 @@ public class GlobalTriggerGUI extends ModElementGUI<GlobalTrigger> {
         hasResult.setSelected(globalTrigger.hasResult);
         side.setSelectedItem(globalTrigger.side);
         dependencies.setDependencies(globalTrigger.dependencies);
+        codeTemplates.setCodeTemplates(globalTrigger.codeTemplates);
     }
 
     @Override
@@ -86,6 +92,7 @@ public class GlobalTriggerGUI extends ModElementGUI<GlobalTrigger> {
         globalTrigger.hasResult = hasResult.isSelected();
         globalTrigger.side = (String) side.getSelectedItem();
         globalTrigger.dependencies = dependencies.getDependencies();
+        globalTrigger.codeTemplates = codeTemplates.getCodeTemplates();
 
         return globalTrigger;
     }
