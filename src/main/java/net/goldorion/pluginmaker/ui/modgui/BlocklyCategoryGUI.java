@@ -3,6 +3,7 @@ package net.goldorion.pluginmaker.ui.modgui;
 import net.goldorion.pluginmaker.elements.types.BlocklyCategory;
 import net.mcreator.ui.MCreator;
 import net.mcreator.ui.component.JColor;
+import net.mcreator.ui.component.util.ComponentUtils;
 import net.mcreator.ui.component.util.PanelUtils;
 import net.mcreator.ui.help.HelpUtils;
 import net.mcreator.ui.init.L10N;
@@ -37,15 +38,15 @@ public class BlocklyCategoryGUI extends ModElementGUI<BlocklyCategory> {
         page1.setOpaque(false);
 
         page1.add(HelpUtils.wrapWithHelpButton(this.withEntry("common/gui_name"), L10N.label("elementgui.common.name")));
-        net.mcreator.ui.component.util.ComponentUtils.deriveFont(this.name, 16.0F);
+        ComponentUtils.deriveFont(this.name, 16.0F);
         this.name.setValidator(new TextFieldValidator(this.name, L10N.t("elementgui.blockly_category.error_category_needs_name")));
         this.name.enableRealtimeValidation();
         page1.add(name);
 
-        page1.add(HelpUtils.wrapWithHelpButton(this.withEntry("blockly_category/editor"), L10N.label("elementgui.blockly_category.editor")));
+        page1.add(HelpUtils.wrapWithHelpButton(this.withEntry("blockly/editor"), L10N.label("elementgui.blockly.editor")));
         page1.add(editor);
 
-        page1.add(HelpUtils.wrapWithHelpButton(this.withEntry("blockly_category/hex_color"), L10N.label("elementgui.blockly_category.hex_color")));
+        page1.add(HelpUtils.wrapWithHelpButton(this.withEntry("blockly/hex_color"), L10N.label("elementgui.blockly.hex_color")));
         page1.add(hexColor);
 
         addPage(PanelUtils.totalCenterInPanel(page1));

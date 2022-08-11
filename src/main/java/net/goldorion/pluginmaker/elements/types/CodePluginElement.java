@@ -1,5 +1,6 @@
-package net.goldorion.pluginmaker.elements.parts;
+package net.goldorion.pluginmaker.elements.types;
 
+import net.goldorion.pluginmaker.elements.parts.CodeTemplate;
 import net.goldorion.pluginmaker.elements.types.interfaces.ICodePluginElement;
 import net.mcreator.element.GeneratableElement;
 import net.mcreator.workspace.elements.ModElement;

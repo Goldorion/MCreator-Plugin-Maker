@@ -1,6 +1,5 @@
 package net.goldorion.pluginmaker.elements.types;
 
-import net.goldorion.pluginmaker.elements.parts.CodePluginElement;
 import net.mcreator.blockly.data.Dependency;
 import net.mcreator.workspace.elements.ModElement;
 

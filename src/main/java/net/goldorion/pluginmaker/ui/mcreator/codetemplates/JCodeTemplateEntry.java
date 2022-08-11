@@ -18,7 +18,7 @@ import java.util.List;
 
 public class JCodeTemplateEntry extends JPanel {
 
-    private final JComboBox<String> generator = new JComboBox<>(new String[]{ "forge-1.16.5", "forge-1.18.2", "fabric-1.17.1" });
+    private final JComboBox<String> generator = new JComboBox<>(new String[]{ "forge-1.16.5", "forge-1.18.2", "fabric-1.17.1", "fabric-1.19.2" });
 
     private final RSyntaxTextArea code = new RSyntaxTextArea();
 

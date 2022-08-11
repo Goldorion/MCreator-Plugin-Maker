@@ -1,0 +1,26 @@
+templates:
+  - template: blockly_block.json.ftl
+    name: "@SRCROOT/procedures/@registryname.json"
+    condition: "editor %= procedures"
+    deleteWhenConditionFalse: true
+
+    # Code templates for different generators
+  - template: code.ftl
+    name: "@SRCROOT/forge-1.16.5/procedures/@registryname.java.ftl"
+    condition: ${data.hasGenerator('forge-1.16.5')}
+    deleteWhenConditionFalse: true
+    variables: "generator=forge-1.16.5"
+  - template: code.ftl
+    name: "@SRCROOT/forge-1.18.2/procedures/@registryname.java.ftl"
+    condition: ${data.hasGenerator('forge-1.18.2')}
+    deleteWhenConditionFalse: true
+    variables: "generator=forge-1.18.2"
+  - template: code.ftl
+    name: "@SRCROOT/fabric-1.17.1/procedures/@registryname.java.ftl"
+    condition: ${data.hasGenerator('fabric-1.17.1')}
+    deleteWhenConditionFalse: true
+    variables: "generator=fabric-1.17.1"
+
+localizationkeys:
+  - key: blockly.block.@registryname
+    mapto: text

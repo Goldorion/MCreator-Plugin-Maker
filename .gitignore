@@ -7,6 +7,7 @@
 .gradle
 
 build/
+out/
 
 gradle.properties
 .idea/vcs.xml

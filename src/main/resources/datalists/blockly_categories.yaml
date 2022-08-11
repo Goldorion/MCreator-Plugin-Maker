@@ -1,0 +1,74 @@
+- advanced:
+  type: procedures
+- apis:
+  type: procedures
+- blockactions:
+  type: procedures
+- blockdata:
+  type: procedures
+- commands:
+  type: procedures
+- customvariables:
+  type: procedures
+- directionactions:
+  type: procedures
+- energyandfluid:
+  type: procedures
+- entitydata:
+  type: procedures
+- entitymanagement:
+  type: procedures
+- guimanagement:
+  type: procedures
+- itemmanagement:
+  type: procedures
+- logicloops:
+  type: procedures
+- logicoperations:
+  type: procedures
+- math:
+  type: procedures
+- mcelements:
+  type: procedures
+- mcvariables:
+  type: procedures
+- other:
+  type: procedures
+- playermanagement:
+  type: procedures
+- projectilemanagement:
+  type: procedures
+- text:
+  type: procedures
+- time:
+  type: procedures
+- worlddata:
+  type: procedures
+- worldmanagement:
+  type: procedures
+- arg_types:
+  type: cmdargs
+- actions:
+  type: cmdargs
+- basictasks:
+  type: aitasks
+- combattasks:
+  type: aitasks
+- movementtasks:
+  type: aitasks
+- othertasks:
+  type: aitasks
+- parentownertasks:
+  type: aitasks
+- targettasks:
+  type: aitasks
+- villagertasks:
+  type: aitasks
+- blocks:
+  type: jsontriggers
+- items:
+  type: jsontriggers
+- utility:
+  type: jsontriggers
+- world:
+  type: jsontriggers

@@ -1,1 +1,0 @@
-This is the color of the category using a hexadecimal color.
