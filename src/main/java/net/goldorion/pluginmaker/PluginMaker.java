@@ -10,8 +10,6 @@ public class PluginMaker extends JavaPlugin {
     public PluginMaker(Plugin plugin) {
         super(plugin);
 
-        addListener(PreGeneratorsLoadingEvent.class, e -> {
-            PluginElementTypes.load();
-        });
+        addListener(PreGeneratorsLoadingEvent.class, e -> PluginElementTypes.load());
     }
 }
